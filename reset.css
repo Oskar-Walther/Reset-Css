@@ -1,3 +1,5 @@
+/* Optimized CSS Reset for Modern Browsers */
+
 /* Resetting margins, paddings, and borders */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,24 +49,55 @@ table {
     border-spacing: 0;
 }
 
-/* Removing default styles for forms and inputs */
+/* Resetting form elements */
 button, input, select, textarea {
     font: inherit;
     margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
 }
 
-/* Setting global box-sizing and default font */
+/* Global box-sizing and base font styles */
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
 html {
-    line-height: 1.15; /* Prevent adjustments of font size after orientation changes in iOS */
-    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+    line-height: 1.15; /* Adjust for iOS and Safari */
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
     line-height: 1.5;
-    font-family: sans-serif;
-    -webkit-font-smoothing: antialiased; /* Improve font rendering */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-rendering: optimizeLegibility; /* Enhance text rendering */
+    -webkit-font-smoothing: antialiased; /* Improve font smoothing */
+    color: #000;
+    background-color: #fff;
+}
+
+/* Improved accessibility for media elements */
+audio, canvas, video {
+    display: inline-block;
+}
+
+/* Consistent focus outline */
+:focus {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* Remove appearance styles for buttons and inputs */
+button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Clear inherited styling for embedded elements */
+img, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
